@@ -45,7 +45,7 @@ def get_token():
 
 @app.route('/handle_calls', methods=['POST'])
 def call():
-    p.pprint(request.form)
+    # p.pprint(request.form)
     print("request.form:", request.form)
     response = VoiceResponse()
     print("response:", response)

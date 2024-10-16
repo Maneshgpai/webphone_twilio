@@ -33,7 +33,7 @@ $(function () {
             });
 
             device.on("error", function (error) {
-                log("Twilio.Device Error: " + error.message);
+                log("Twilio.Device Error: " + error);
             });
 
             device.on("connect", function (conn) {
