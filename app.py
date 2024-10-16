@@ -46,8 +46,11 @@ def get_token():
 @app.route('/handle_calls', methods=['POST'])
 def call():
     p.pprint(request.form)
+    print("request.form:", request.form)
     response = VoiceResponse()
+    print("response:", response)
     dial = Dial(callerId=twilio_number)
+    print("dial:", dial)
 
     if 'To' in request.form and request.form['To'] != twilio_number:
         print('outbound call')
