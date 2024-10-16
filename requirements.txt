@@ -1,0 +1,4 @@
+twilio
+flask
+python-dotenv
+gunicorn==21.2.0
