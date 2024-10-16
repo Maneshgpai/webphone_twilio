@@ -2,12 +2,11 @@ $(function () {
     var device;
 
     log("Requesting Access Token...");
-    console.log("main.js >> Requesting Access Token...")
     // Using a relative link to access the Voice Token function
     $.getJSON("./token")
         .then(function (data) {
             log("Got a token.");
-            console.log("Token: " + data.token);
+            // console.log("Token: " + data.token);
 
             // Setup Twilio.Device
             device = new Twilio.Device(data.token, {
@@ -33,7 +32,9 @@ $(function () {
             });
 
             device.on("error", function (error) {
-                log("Twilio.Device Error: " + error);
+                log("Twilio.Device Error: " + error.message);
+                log("Twilio.Device Error: " + error.text);
+                log("Twilio.Device Error: " + error.debug);
             });
 
             device.on("connect", function (conn) {
@@ -48,7 +49,6 @@ $(function () {
 
         })
         .catch(function (err) {
-            console.log("main.js >> Error ", err);
             log("Could not get a token from server!");
         });
 
@@ -65,7 +65,7 @@ $(function () {
         $("#txtPhoneNumber").text(params.To)
         
 
-        console.log("Calling " + params.To + "...");
+        // console.log("Calling " + params.To + "...");
         if (device) {
             var outgoingConnection = device.connect(params);
             outgoingConnection.on("ringing", function () {
