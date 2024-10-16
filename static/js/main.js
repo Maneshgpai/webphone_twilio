@@ -2,6 +2,7 @@ $(function () {
     var device;
 
     log("Requesting Access Token...");
+    console.log("main.js >> Requesting Access Token...")
     // Using a relative link to access the Voice Token function
     $.getJSON("./token")
         .then(function (data) {
@@ -47,7 +48,7 @@ $(function () {
 
         })
         .catch(function (err) {
-            console.log(err);
+            console.log("main.js >> Error ", err);
             log("Could not get a token from server!");
         });
 
