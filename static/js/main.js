@@ -39,12 +39,18 @@ $(function () {
 
             device.on("connect", function (conn) {
                 log('Successfully established call ! ');
-                $('#modal-call-in-progress').modal('show')
+                const callModal = new bootstrap.Modal(document.getElementById('modal-call-in-progress'));
+                callModal.show();
             });
 
             device.on("disconnect", function (conn) {
                 log("Call ended.");
-                $('.modal').modal('hide')
+                // Hide all modals using Bootstrap 5 syntax
+                const modals = document.querySelectorAll('.modal');
+                modals.forEach(modalEl => {
+                    const modal = bootstrap.Modal.getInstance(modalEl);
+                    if (modal) modal.hide();
+                });
             });
 
         })
@@ -53,8 +59,10 @@ $(function () {
         });
 
     // Bind button to make call
-    $('#btnDial').bind('click', function () {
-        $('#modal-dial').modal('hide')
+    document.getElementById('btnDial').addEventListener('click', function() {
+        // Hide dial modal using Bootstrap 5 syntax
+        const dialModal = bootstrap.Modal.getInstance(document.getElementById('modal-dial'));
+        if (dialModal) dialModal.hide();
 
         // get the phone number to connect the call to
         var params = {
@@ -62,34 +70,37 @@ $(function () {
         };
 
         // output destination number
-        $("#txtPhoneNumber").text(params.To)
-        
+        $("#txtPhoneNumber").text(params.To);
 
-        // console.log("Calling " + params.To + "...");
         if (device) {
             var outgoingConnection = device.connect(params);
             outgoingConnection.on("ringing", function () {
                 log("Ringing...");
             });
         }
-
-    })
+    });
 
     // Bind button to hangup call
-
-    $('.btnHangUp').bind('click', function () {
-        $('.modal').modal('hide')
-        log("Hanging up...");
-        if (device) {
-            device.disconnectAll();
-        }
-    })
+    document.querySelectorAll('.btnHangUp').forEach(btn => {
+        btn.addEventListener('click', function() {
+            // Hide all modals using Bootstrap 5 syntax
+            const modals = document.querySelectorAll('.modal');
+            modals.forEach(modalEl => {
+                const modal = bootstrap.Modal.getInstance(modalEl);
+                if (modal) modal.hide();
+            });
+            
+            log("Hanging up...");
+            if (device) {
+                device.disconnectAll();
+            }
+        });
+    });
 
     // Activity log
     function log(message) {
         var logDiv = document.getElementById("log");
-        logDiv.innerHTML += "<p>&gt;&nbsp;" + message + "</p>";
+        logDiv.innerHTML += "<p>&nbsp;" + message + "</p>";
         logDiv.scrollTop = logDiv.scrollHeight;
     }
-
 });
