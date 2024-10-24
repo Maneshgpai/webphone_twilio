@@ -1,6 +1,7 @@
 $(function () {
     var device;
 
+    log("Welcome to Virgolife demo");
     log("Requesting Access Token...");
     // Using a relative link to access the Voice Token function
     $.getJSON("./token")
@@ -28,13 +29,13 @@ $(function () {
             });
 
             device.on("ready", function (device) {
-                log("Twilio.Device Ready!");
+                log("Webphone Ready!");
             });
 
             device.on("error", function (error) {
-                log("Twilio.Device Error: " + error.message);
-                log("Twilio.Device Error: " + error.text);
-                log("Twilio.Device Error: " + error.debug);
+                log("Webphone Error: " + error.message);
+                log("Webphone Error: " + error.text);
+                log("Webphone Error: " + error.debug);
             });
 
             device.on("connect", function (conn) {
