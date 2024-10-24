@@ -99,9 +99,65 @@ $(function () {
     });
 
     // Activity log
-    function log(message) {
-        var logDiv = document.getElementById("log");
-        logDiv.innerHTML += "<p>&nbsp;" + message + "</p>";
+    // function log(message) {
+    //     var logDiv = document.getElementById("log");
+    //     logDiv.innerHTML += "<p>&nbsp;" + message + "</p>";
+    //     logDiv.scrollTop = logDiv.scrollHeight;
+    // }
+
+    function log(message, type = 'info') {
+        const logDiv = document.getElementById("log");
+        const timestamp = new Date().toLocaleTimeString('en-US', { 
+            hour12: true,
+            hour: '2-digit',
+            minute: '2-digit',
+            second: '2-digit',
+            millisecond: true
+        });
+    
+        // Define status types and their corresponding styles
+        const statusStyles = {
+            info: 'background-color: #e8f4f8; color: #0077cc; border-left: 4px solid #0077cc;',
+            success: 'background-color: #edf7ed; color: #2e7d32; border-left: 4px solid #2e7d32;',
+            warning: 'background-color: #fff4e5; color: #ed6c02; border-left: 4px solid #ed6c02;',
+            error: 'background-color: #fdeded; color: #d32f2f; border-left: 4px solid #d32f2f;'
+        };
+    
+        const logEntry = `
+            <div class="log-entry" style="
+                margin: 8px 0;
+                padding: 12px;
+                border-radius: 4px;
+                font-family: 'Arial', sans-serif;
+                ${statusStyles[type]}
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            ">
+                <div class="message-content" style="
+                    flex-grow: 1;
+                    margin-right: 16px;
+                ">
+                    ${message}
+                </div>
+                <div class="timestamp" style="
+                    font-size: 0.85em;
+                    color: #666;
+                    white-space: nowrap;
+                ">
+                    ${timestamp}
+                </div>
+            </div>
+        `;
+    
+        logDiv.innerHTML += logEntry;
         logDiv.scrollTop = logDiv.scrollHeight;
     }
+    
+    // Usage examples:
+    // log("WebPhone connected successfully", "success");
+    // log("Attempting to connect...", "info");
+    // log("Weak network connection detected", "warning");
+    // log("Connection failed", "error");
 });
