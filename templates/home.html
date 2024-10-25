@@ -1,67 +1,127 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <meta charset="UTF-8">
     <title>Virgolife Demo</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
     <link rel="stylesheet" href="/static/css/style.css">
 </head>
 
+
 <body>
-    <div class="iphone-container">
-        <div class="iphone">
-            <!-- Status Bar -->
-            <div class="status-bar">
-                <div class="status-left">
-                    <span class="time">9:41</span>
-                </div>
-                <div class="status-right">
-                    <i class="fas fa-signal"></i>
-                    <i class="fas fa-wifi"></i>
-                    <i class="fas fa-battery-full"></i>
+    <div class="demo-container">
+
+
+        <!-- New Banner Section -->
+        <div class="demo-banner">
+            <div class="content-wrapper text-center">
+                <h1 class="demo-title">Virgolife - Demo of an AI-Powered IVR</h1>
+                <div class="demo-description">
+                    <p>Virgolife Private Ltd., is a fictitious Delaware-based company that curates and sells rare, vintage, and collectors' edition second-hand cars, we've implemented a next-gen AI-driven IVR system. Virgolife, established in 1995, has gained global recognition for restoring iconic cars from the 1950s-1980s, attracting collectors and hobbyists alike.</p>
+                    <p>This demo highlights how even small businesses can afford top-tier, cutting-edge tech like AI IVR systems, which previously seemed out of reach. It's built to handle customer inquiries efficiently and drive meaningful interactions—all while saving you time and resources.</p>
                 </div>
             </div>
-        
-        <!-- App Grid -->
-        <div class="app-grid">
-            <!-- Row 1 -->
-            <div class="app-icon dummy"><i class="fas fa-envelope"></i><span>Mail</span></div>
-            <div class="app-icon dummy"><i class="fas fa-calendar"></i><span>Calendar</span></div>
-            <div class="app-icon dummy"><i class="fas fa-images"></i><span>Photos</span></div>
-            <div class="app-icon dummy"><i class="fas fa-camera"></i><span>Camera</span></div>
-
-            <!-- Row 2 -->
-            <div class="app-icon dummy"><i class="fas fa-clock"></i><span>Clock</span></div>
-            <div class="app-icon dummy"><i class="fa-solid fa-map"></i><span>Maps</span></div>
-            <div class="app-icon dummy"><i class="fas fa-cloud"></i><span>Weather</span></div>
-            <div class="app-icon dummy"><i class="fas fa-sticky-note"></i><span>Notes</span></div>
-
-            <!-- Row 3 -->
-            <div class="app-icon dummy"><i class="fas fa-cog"></i><span>Settings</span></div>
-            <div class="app-icon dummy"><i class="fas fa-calculator"></i><span>Calculator</span></div>
-            <div class="app-icon dummy"><i class="fas fa-compass"></i><span>Compass</span></div>
-            <div class="app-icon dummy"><i class="fas fa-music"></i><span>Music</span></div>
         </div>
+        <div class="iphone-container">
+            <div class="iphone">
+                <!-- Status Bar -->
+                <div class="status-bar">
+                    <div class="status-left">
+                        <span class="time">9:41</span>
+                    </div>
+                    <div class="status-right">
+                        <i class="fas fa-signal"></i>
+                        <i class="fas fa-wifi"></i>
+                        <i class="fas fa-battery-full"></i>
+                    </div>
+                </div>
+            
+            <!-- App Grid -->
+            <div class="app-grid">
+                <!-- Row 1 -->
+                <div class="app-icon dummy">
+                    <i class="fas fa-envelope"></i>
+                    <span>Mail</span>
+                </div>
+                <div class="app-icon dummy">
+                    <i class="fas fa-calendar"></i>
+                    <span>Calendar</span>
+                </div>
+                <div class="app-icon dummy">
+                    <i class="fas fa-images"></i>
+                    <span>Photos</span>
+                </div>
+                <div class="app-icon dummy">
+                    <i class="fas fa-camera"></i>
+                    <span>Camera</span>
+                </div>
 
-        <!-- Dock -->
-            <div class="dock">
-                <div class="app-icon dummy"><i class="fa-brands fa-chrome"></i><span>Chrome</span></div>
-                <div class="app-icon dummy"><i class="fas fa-message"></i><span>Messages</span></div>
-                <div id="btnOpenNumberPad" class="app-icon active"><i class="fas fa-phone-alt"></i><span>Phone</span></div>
+                    <!-- Row 2 -->
+                    <div class="app-icon dummy">
+                        <i class="fas fa-clock"></i>
+                        <span>Clock</span>
+                    </div>
+                    <div class="app-icon dummy">
+                        <i class="fas fa-map"></i>
+                        <span>Maps</span>
+                    </div>
+                    <div class="app-icon dummy">
+                        <i class="fas fa-cloud"></i>
+                        <span>Weather</span>
+                    </div>
+                    <div class="app-icon dummy">
+                        <i class="fas fa-sticky-note"></i>
+                        <span>Notes</span>
+                    </div>
+
+                    <!-- Row 3 -->
+                    <div class="app-icon dummy">
+                        <i class="fas fa-cog"></i>
+                        <span>Settings</span>
+                    </div>
+                    <div class="app-icon dummy">
+                        <i class="fas fa-calculator"></i>
+                        <span>Calculator</span>
+                    </div>
+                    <div class="app-icon dummy">
+                        <i class="fas fa-compass"></i>
+                        <span>Compass</span>
+                    </div>
+                    <div class="app-icon dummy">
+                        <i class="fas fa-music"></i>
+                        <span>Music</span>
+                    </div>
+                </div>
+
+                <!-- Dock -->
+                <div class="dock">
+                    <div class="app-icon dummy">
+                        <i class="fa-brands fa-safari"></i>
+                        <span>Safari</span>
+                    </div>
+                    <div class="app-icon dummy">
+                        <i class="fas fa-message"></i>
+                        <span>Messages</span>
+                    </div>
+                    <div id="btnOpenNumberPad" class="app-icon active">
+                        <i class="fas fa-phone-alt"></i>
+                        <span>Phone</span>
+                    </div>
+                </div>
             </div>
-        </div>
 
-        <!-- <div class="card text-center log-container"><div id="log"></div></div> -->
-        <div id="log" style="
-        max-height: 400px;
-        overflow-y: auto;
-        padding: 16px;
-        background-color: #ffffff;
-        border: 1px solid #e0e0e0;
-        border-radius: 8px;
-        box-shadow: 0 2px 8px rgba(0,0,0,0.1);"></div>
+            <!-- <div class="card text-center log-container"><div id="log"></div></div> -->
+            <div id="log" style="
+            max-height: 400px;
+            overflow-y: auto;
+            padding: 16px;
+            background-color: #ffffff;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);"></div>
+        </div>
     </div>
-
 
 
         <!-- Modal dial -->
@@ -74,11 +134,11 @@
         {% include 'incoming_call_modal.html' %}
 
 
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
-        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-        <script type="text/javascript" src="https://media.twiliocdn.com/sdk/js/client/v1.8/twilio.min.js"></script>
-        <script type="text/javascript" src="/static/js/main.js"></script>
-        <script type="text/javascript" src="/static/js/modals.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://media.twiliocdn.com/sdk/js/client/v1.8/twilio.min.js"></script>
+    <script type="text/javascript" src="/static/js/main.js"></script>
+    <script type="text/javascript" src="/static/js/modals.js" defer></script>
 </body>
 
 </html>
