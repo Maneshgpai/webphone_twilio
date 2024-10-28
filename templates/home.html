@@ -2,27 +2,59 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Virgolife Demo</title>
+    <title>Virgolife - IVR Demo</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
     <link rel="stylesheet" href="/static/css/style.css">
 </head>
 
-
 <body>
     <div class="demo-container">
-
-
+        <div class="table-container">
+            <div class="table-responsive">
+                <table class="table table-bordered table-hover shadow-sm">
+                    <thead class="table-dark">
+                        <tr>
+                            <th scope="col" class="text-center" style="width: 5%">Sl #</th>
+                            <th scope="col" style="width: 50%">Demo business</th>
+                            <th scope="col" style="width: 15%">Language</th>
+                            <th scope="col" style="width: 15%">Phone number</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="text-center">1</td>
+                            <td class="text-wrap">
+                                <p class="mb-0">Virgolife vintage car showroom - Delaware, United States.</p>
+                                <small class="text-muted">Customers call to delve deeper into the history of a specific model, discuss minute details about its restoration, or simply chat about the passion for classic automobiles.</small>
+                            </td>
+                            <td class="align-middle">English (US)</td>
+                            <td class="align-middle"><a href="tel:+12296963352">(+1) 229-696-3352</a></td>
+                        </tr>
+                        <tr>
+                            <td class="text-center">2</td>
+                            <td class="text-wrap">
+                                <p class="mb-0">Nørrebro Vintage - Copenhagen, Denmark</p>
+                                <small class="text-muted">Specializes in second-hand fashion from the 70s and 80s. Customers prefer to call in to inquire about specific items, discuss sizing, or simply chat about vintage fashion trends.</small>
+                            </td>
+                            <td class="align-middle">Dutch</td>
+                            <td class="align-middle"><a href="tel:"></a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
         <!-- New Banner Section -->
-        <div class="demo-banner">
+        <!-- <div class="demo-banner">
             <div class="content-wrapper text-center">
-                <h1 class="demo-title">Virgolife - Demo of an AI-Powered IVR</h1>
+                <h1 class="demo-title">Demo of A.I IVR</h1>
                 <div class="demo-description">
                     <p>Virgolife Private Ltd., is a fictitious Delaware-based company that curates and sells rare, vintage, and collectors' edition second-hand cars, we've implemented a next-gen AI-driven IVR system. Virgolife, established in 1995, has gained global recognition for restoring iconic cars from the 1950s-1980s, attracting collectors and hobbyists alike.</p>
                     <p>This demo highlights how even small businesses can afford top-tier, cutting-edge tech like AI IVR systems, which previously seemed out of reach. It's built to handle customer inquiries efficiently and drive meaningful interactions—all while saving you time and resources.</p>
+                    <p>Call (+1)229-696-3352 <br>to experience the demo.<br>Otherwise you can use the webphone given below.</p>
                 </div>
             </div>
-        </div>
+        </div> -->
         <div class="iphone-container">
             <div class="iphone">
                 <!-- Status Bar -->
@@ -121,6 +153,7 @@
             border-radius: 8px;
             box-shadow: 0 2px 8px rgba(0,0,0,0.1);"></div>
         </div>
+        {% include 'iphone_modal.html' %}
     </div>
 
 
